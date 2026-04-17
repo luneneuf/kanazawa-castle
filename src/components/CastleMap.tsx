@@ -15,7 +15,13 @@ export default function CastleMap({ nodeStyles = {} }: Props) {
 
   return (
     <svg viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg"
-      style={{ width: '100%', height: 'auto', background: '#1a1610', borderRadius: 8 }}>
+      style={{ width: '100%', height: 'auto', borderRadius: 8 }}>
+
+      {/* 레이어 1: 惣絵図 배경 */}
+      <image href="/assets/castle_map.jpg"
+        x="0" y="0" width="1000" height="800"
+        opacity="0.9"
+        preserveAspectRatio="xMidYMid meet" />
 
       {/* 외해자 */}
       <polygon id="outer-moat" data-type="moat"
@@ -85,6 +91,7 @@ export default function CastleMap({ nodeStyles = {} }: Props) {
       {LABELS.map(({ id, x, y, label }) => (
         <text key={id} x={x} y={y}
           textAnchor="middle" fontSize="13" fill="#e8e0d4"
+          fill="#2a1f0f"
           opacity={s(id).opacity > 0.3 ? 0.9 : 0.3}
           style={{ pointerEvents: 'none', userSelect: 'none' }}>
           {label}
