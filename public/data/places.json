@@ -1,9 +1,57 @@
 [
   {
+    "id": "outer-moat",
+    "name": { "ko": "외해자", "ja": "外堀" },
+    "cx": 0.50,
+    "cy": 0.50,
+    "eras": {
+      "golden":  "standing",
+      "1602":    "standing",
+      "1631":    "standing",
+      "1759":    "standing",
+      "1808":    "standing",
+      "1881":    "standing",
+      "current": "standing"
+    },
+    "description_key": "outer_moat_desc"
+  },
+  {
+    "id": "inner-moat",
+    "name": { "ko": "내해자", "ja": "内堀" },
+    "cx": 0.50,
+    "cy": 0.74,
+    "eras": {
+      "golden":  "standing",
+      "1602":    "standing",
+      "1631":    "standing",
+      "1759":    "standing",
+      "1808":    "standing",
+      "1881":    "standing",
+      "current": "standing"
+    },
+    "description_key": "inner_moat_desc"
+  },
+  {
+    "id": "honmaru",
+    "name": { "ko": "혼마루", "ja": "本丸" },
+    "cx": 0.31,
+    "cy": 0.33,
+    "eras": {
+      "golden":  "standing",
+      "1602":    "standing",
+      "1631":    "standing",
+      "1759":    "standing",
+      "1808":    "standing",
+      "1881":    "standing",
+      "current": "standing"
+    },
+    "description_key": "honmaru_desc"
+  },
+  {
     "id": "tenshu-dai",
     "name": { "ko": "천수대", "ja": "天守台" },
-    "cx": 0.42,
-    "cy": 0.31,
+    "cx": 0.22,
+    "cy": 0.21,
     "eras": {
       "golden":  "standing",
       "1602":    "ruin",
@@ -14,5 +62,85 @@
       "current": "ruin"
     },
     "description_key": "tenshu_dai_desc"
+  },
+  {
+    "id": "ninomaru",
+    "name": { "ko": "니노마루", "ja": "二の丸" },
+    "cx": 0.67,
+    "cy": 0.41,
+    "eras": {
+      "golden":  "standing",
+      "1602":    "standing",
+      "1631":    "standing",
+      "1759":    "standing",
+      "1808":    "standing",
+      "1881":    "standing",
+      "current": "standing"
+    },
+    "description_key": "ninomaru_desc"
+  },
+  {
+    "id": "sannomaru",
+    "name": { "ko": "산노마루", "ja": "三の丸" },
+    "cx": 0.50,
+    "cy": 0.83,
+    "eras": {
+      "golden":  "standing",
+      "1602":    "standing",
+      "1631":    "standing",
+      "1759":    "standing",
+      "1808":    "standing",
+      "1881":    "standing",
+      "current": "standing"
+    },
+    "description_key": "sannomaru_desc"
+  },
+  {
+    "id": "kahoku-turret",
+    "name": { "ko": "가호쿠 망루", "ja": "河北門" },
+    "cx": 0.81,
+    "cy": 0.17,
+    "eras": {
+      "golden":  "standing",
+      "1602":    "ruin",
+      "1631":    "ruin",
+      "1759":    "ruin",
+      "1808":    "ruin",
+      "1881":    "ruin",
+      "current": "restored"
+    },
+    "description_key": "kahoku_turret_desc"
+  },
+  {
+    "id": "hishi-turret",
+    "name": { "ko": "히시 망루", "ja": "菱櫓" },
+    "cx": 0.51,
+    "cy": 0.64,
+    "eras": {
+      "golden":  "standing",
+      "1602":    "standing",
+      "1631":    "standing",
+      "1759":    "ruin",
+      "1808":    "ruin",
+      "1881":    "ruin",
+      "current": "restored"
+    },
+    "description_key": "hishi_turret_desc"
+  },
+  {
+    "id": "gojikken-nagaya",
+    "name": { "ko": "오십간 장옥", "ja": "五十間長屋" },
+    "cx": 0.68,
+    "cy": 0.64,
+    "eras": {
+      "golden":  "standing",
+      "1602":    "standing",
+      "1631":    "standing",
+      "1759":    "ruin",
+      "1808":    "ruin",
+      "1881":    "ruin",
+      "current": "restored"
+    },
+    "description_key": "gojikken_nagaya_desc"
   }
 ]
