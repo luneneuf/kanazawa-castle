@@ -1,109 +1,142 @@
-export default function CastleMap() {
+type NodeStyle = { fill: string; opacity: number };
+type Props = {
+  nodeStyles?: Record<string, NodeStyle>;
+};
+
+const DEFAULT_STYLE: NodeStyle = { fill: '#8b7355', opacity: 1 };
+
+const LABELS = [
+  { id: 'tenshu-dai', x: 222, y: 164, label: '天守台' },
+  { id: 'honmaru',    x: 305, y: 260, label: '本丸' },
+  { id: 'ninomaru',   x: 665, y: 327, label: '二の丸' },
+  { id: 'sannomaru',  x: 500, y: 660, label: '三の丸' },
+];
+
+export default function CastleMap({ nodeStyles = {} }: Props) {
+  const s = (id: string): NodeStyle => nodeStyles[id] ?? DEFAULT_STYLE;
+
   return (
     <svg
       viewBox="0 0 1000 800"
       xmlns="http://www.w3.org/2000/svg"
-      style={{ width: '100%', height: 'auto' }}
+      style={{ width: '100%', height: 'auto', background: '#1a1610', borderRadius: 8 }}
     >
-      {/* 외해자 — 성 전체 외곽 해자 */}
+      {/* 외해자 */}
       <rect
         id="outer-moat"
         data-type="moat"
-        data-era-state="current:standing"
         x="70" y="40" width="860" height="720"
-        fill="#3a5a7a"
-        opacity="0.6"
+        fill={s('outer-moat').fill}
+        opacity={s('outer-moat').opacity}
+        stroke="#2a3a4a"
+        strokeWidth="2"
       />
 
-      {/* 성내 대지 (해자 안쪽 지면) */}
+      {/* 성내 대지 */}
       <rect x="140" y="100" width="720" height="600" fill="#4a3d2a" />
 
-      {/* 내해자 — 니노마루·산노마루 사이 */}
+      {/* 내해자 */}
       <rect
         id="inner-moat"
         data-type="moat"
-        data-era-state="current:standing"
         x="140" y="555" width="720" height="65"
-        fill="#3a5a7a"
-        opacity="0.6"
+        fill={s('inner-moat').fill}
+        opacity={s('inner-moat').opacity}
+        stroke="#2a3a4a"
+        strokeWidth="1.5"
       />
 
-      {/* 혼마루 — 본성(本丸), 북서구역 */}
+      {/* 혼마루 */}
       <polygon
         id="honmaru"
         data-type="zone"
-        data-era-state="current:standing"
         points="140,100 470,100 470,420 140,420"
-        fill="#8b7355"
-        stroke="#c4a882"
-        strokeWidth="2"
+        fill={s('honmaru').fill}
+        opacity={s('honmaru').opacity}
+        stroke="#0f0f0f"
+        strokeWidth="1.5"
       />
 
-      {/* 니노마루 — 이성(二の丸), 중앙-동쪽 */}
+      {/* 니노마루 */}
       <polygon
         id="ninomaru"
         data-type="zone"
-        data-era-state="current:standing"
         points="470,100 860,100 860,555 470,555"
-        fill="#9b8365"
-        stroke="#c4a882"
-        strokeWidth="2"
+        fill={s('ninomaru').fill}
+        opacity={s('ninomaru').opacity}
+        stroke="#0f0f0f"
+        strokeWidth="1.5"
       />
 
-      {/* 산노마루 — 삼성(三の丸), 남쪽 */}
+      {/* 산노마루 */}
       <polygon
         id="sannomaru"
         data-type="zone"
-        data-era-state="current:standing"
         points="140,620 860,620 860,700 140,700"
-        fill="#7a6a50"
-        stroke="#c4a882"
+        fill={s('sannomaru').fill}
+        opacity={s('sannomaru').opacity}
+        stroke="#0f0f0f"
         strokeWidth="1.5"
       />
 
-      {/* 천수대 — 天守台, 혼마루 북서단 석단(폐허) */}
+      {/* 천수대 */}
       <rect
         id="tenshu-dai"
         data-type="building"
-        data-era-state="current:ruin"
         x="155" y="112" width="135" height="105"
-        fill="#6b5a45"
+        fill={s('tenshu-dai').fill}
+        opacity={s('tenshu-dai').opacity}
         stroke="#c4a882"
         strokeWidth="1.5"
       />
 
-      {/* 가호쿠 망루 — 河北門, 니노마루 북동 입구 (복원) */}
+      {/* 가호쿠 망루 */}
       <rect
         id="kahoku-turret"
         data-type="building"
-        data-era-state="current:restored"
         x="755" y="95" width="105" height="80"
-        fill="#c4a882"
-        stroke="#e8d4a0"
+        fill={s('kahoku-turret').fill}
+        opacity={s('kahoku-turret').opacity}
+        stroke="#8fbcbb"
         strokeWidth="1.5"
       />
 
-      {/* 히시 망루 — 菱櫓, 니노마루 남서 모서리 (복원) */}
+      {/* 히시 망루 */}
       <polygon
         id="hishi-turret"
         data-type="building"
-        data-era-state="current:restored"
         points="470,510 510,492 550,510 510,528"
-        fill="#c4a882"
-        stroke="#e8d4a0"
+        fill={s('hishi-turret').fill}
+        opacity={s('hishi-turret').opacity}
+        stroke="#8fbcbb"
         strokeWidth="1.5"
       />
 
-      {/* 오십간 장옥 — 五十間長屋, 히시에서 동쪽으로 이어지는 긴 건물 (복원) */}
+      {/* 오십간 장옥 */}
       <rect
         id="gojikken-nagaya"
         data-type="building"
-        data-era-state="current:restored"
         x="550" y="500" width="260" height="30"
-        fill="#c4a882"
-        stroke="#e8d4a0"
+        fill={s('gojikken-nagaya').fill}
+        opacity={s('gojikken-nagaya').opacity}
+        stroke="#8fbcbb"
         strokeWidth="1.5"
       />
+
+      {/* 레이블 */}
+      {LABELS.map(({ id, x, y, label }) => (
+        <text
+          key={id}
+          x={x} y={y}
+          textAnchor="middle"
+          fontSize="13"
+          fill="#e8e0d4"
+          opacity={s(id).opacity > 0.3 ? 0.9 : 0.3}
+          style={{ pointerEvents: 'none', userSelect: 'none' }}
+        >
+          {label}
+        </text>
+      ))}
     </svg>
   );
 }
