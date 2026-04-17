@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Coordinate Picker</title>
+<style>
+  body { margin: 0; background: #111; }
+  #info {
+    position: fixed; top: 10px; left: 10px; z-index: 10;
+    background: rgba(0,0,0,0.85); color: #fff;
+    padding: 10px 14px; font: 14px monospace; border-radius: 6px;
+    pointer-events: none;
+  }
+  svg { display: block; width: 100vw; height: auto; cursor: crosshair; }
+  circle { pointer-events: none; }
+  text.pin { pointer-events: none; font: bold 11px monospace; fill: #ff0; }
+</style>
+</head>
+<body>
+<div id="info">클릭하면 SVG 좌표가 표시됩니다</div>
+<svg id="svg" viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
+  <image href="./sozu_53.jpg" x="0" y="0" width="1000" height="800"
+    preserveAspectRatio="xMidYMid meet" />
+  <g id="pins"></g>
+</svg>
+<script>
+const svg = document.getElementById('svg');
+const info = document.getElementById('info');
+const pins = document.getElementById('pins');
+const log = [];
+
+svg.addEventListener('click', e => {
+  const pt = svg.createSVGPoint();
+  pt.x = e.clientX; pt.y = e.clientY;
+  const svgPt = pt.matrixTransform(svg.getScreenCTM().inverse());
+  const x = Math.round(svgPt.x);
+  const y = Math.round(svgPt.y);
+  log.push({x, y});
+
+  const c = document.createElementNS('http://www.w3.org/2000/svg','circle');
+  c.setAttribute('cx', x); c.setAttribute('cy', y);
+  c.setAttribute('r', 5); c.setAttribute('fill', '#ff0');
+  c.setAttribute('opacity', '0.8');
+  pins.appendChild(c);
+
+  const t = document.createElementNS('http://www.w3.org/2000/svg','text');
+  t.setAttribute('class','pin');
+  t.setAttribute('x', x+7); t.setAttribute('y', y-7);
+  t.textContent = `${log.length}: (${x},${y})`;
+  pins.appendChild(t);
+
+  info.textContent = `#${log.length}  x:${x}  y:${y}  |  콘솔에서 log 확인`;
+  console.log(JSON.stringify(log));
+});
+</script>
+</body>
+</html>

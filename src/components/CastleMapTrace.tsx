@@ -26,9 +26,9 @@ export default function CastleMapTrace() {
         x="65" y="160" width="55" height="70"
         fill="none" stroke="#ff4444" strokeWidth="3" />
 
-      {/* 가호쿠 망루 — 본환 서쪽 입구 */}
+      {/* 河北門 — 북쪽 성벽 입구 */}
       <rect id="kahoku-turret" data-type="building"
-        x="65" y="358" width="60" height="53"
+        x="195" y="108" width="55" height="35"
         fill="none" stroke="#8fbcbb" strokeWidth="2.5" />
 
       {/* 니노마루 — 우측 밀집 건물군 */}
@@ -41,14 +41,14 @@ export default function CastleMapTrace() {
         points="115,613 829,613 829,730 225,730"
         fill="#c4a882" opacity="0.3" stroke="#c4a882" strokeWidth="2" />
 
-      {/* 히시 망루 — 니노마루 북서쪽 모서리 */}
+      {/* 히시 망루 — 장옥 좌측 끝에 붙임 */}
       <rect id="hishi-turret" data-type="building"
-        x="617" y="333" width="40" height="50"
+        x="630" y="490" width="52" height="52"
         fill="none" stroke="#8fbcbb" strokeWidth="2.5" />
 
-      {/* 오십간 장옥 — 히시 망루에서 동쪽으로 (긴 건물) */}
+      {/* 오십간 장옥 — 히시 망루에서 우측으로 */}
       <rect id="gojikken-nagaya" data-type="building"
-        x="657" y="333" width="248" height="45"
+        x="680" y="500" width="220" height="28"
         fill="none" stroke="#8fbcbb" strokeWidth="2.5" />
 
       {/* 내해자 — 본환·니노마루 남쪽 경계선 */}
@@ -61,7 +61,8 @@ export default function CastleMapTrace() {
         { id: 'honmaru',    x: 220, y: 350, label: '本丸' },
         { id: 'ninomaru',   x: 761, y: 475, label: '二の丸' },
         { id: 'sannomaru',  x: 470, y: 675, label: '三の丸' },
-        { id: 'tenshu-dai', x: 92,  y: 205, label: '天守台' },
+        { id: 'tenshu-dai',     x: 92,  y: 205, label: '天守台' },
+        { id: 'kahoku-turret', x: 222, y: 102, label: '河北門' },
       ].map(({ id, x, y, label }) => (
         <text key={id} x={x} y={y}
           textAnchor="middle" fontSize="14" fill="#fff"
