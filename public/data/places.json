@@ -40,7 +40,7 @@
       "golden":  "standing",
       "1602":    "standing",
       "1631":    "standing",
-      "1759":    "standing",
+      "1759":    "ruin",
       "1808":    "standing",
       "1881":    "standing",
       "current": "standing"
@@ -72,7 +72,7 @@
       "golden":  "standing",
       "1602":    "standing",
       "1631":    "standing",
-      "1759":    "standing",
+      "1759":    "ruin",
       "1808":    "standing",
       "1881":    "standing",
       "current": "standing"
@@ -88,7 +88,7 @@
       "golden":  "standing",
       "1602":    "standing",
       "1631":    "standing",
-      "1759":    "standing",
+      "1759":    "ruin",
       "1808":    "standing",
       "1881":    "standing",
       "current": "standing"
@@ -103,10 +103,10 @@
     "eras": {
       "golden":  "standing",
       "1602":    "ruin",
-      "1631":    "ruin",
+      "1631":    "standing",
       "1759":    "ruin",
-      "1808":    "ruin",
-      "1881":    "ruin",
+      "1808":    "standing",
+      "1881":    "standing",
       "current": "restored"
     },
     "description_key": "kahoku_turret_desc"
@@ -118,7 +118,7 @@
     "cy": 0.64,
     "eras": {
       "golden":  "standing",
-      "1602":    "standing",
+      "1602":    "ruin",
       "1631":    "standing",
       "1759":    "ruin",
       "1808":    "ruin",
@@ -134,7 +134,7 @@
     "cy": 0.64,
     "eras": {
       "golden":  "standing",
-      "1602":    "standing",
+      "1602":    "ruin",
       "1631":    "standing",
       "1759":    "ruin",
       "1808":    "ruin",
