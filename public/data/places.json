@@ -98,8 +98,8 @@
   {
     "id": "kahoku-turret",
     "name": { "ko": "가호쿠 망루", "ja": "河北門" },
-    "cx": 0.095,
-    "cy": 0.481,
+    "cx": 0.223,
+    "cy": 0.157,
     "eras": {
       "golden":  "standing",
       "1602":    "ruin",
@@ -114,8 +114,8 @@
   {
     "id": "hishi-turret",
     "name": { "ko": "히시 망루", "ja": "菱櫓" },
-    "cx": 0.637,
-    "cy": 0.448,
+    "cx": 0.656,
+    "cy": 0.645,
     "eras": {
       "golden":  "standing",
       "1602":    "ruin",
@@ -130,8 +130,8 @@
   {
     "id": "gojikken-nagaya",
     "name": { "ko": "오십간 장옥", "ja": "五十間長屋" },
-    "cx": 0.781,
-    "cy": 0.444,
+    "cx": 0.790,
+    "cy": 0.642,
     "eras": {
       "golden":  "standing",
       "1602":    "ruin",
