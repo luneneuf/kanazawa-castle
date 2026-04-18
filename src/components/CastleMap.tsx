@@ -25,7 +25,8 @@ export default function CastleMap({ nodeStyles = {}, onNodeClick }: Props) {
       <image href="/assets/castle_map.jpg"
         x="0" y="0" width="1000" height="800"
         opacity="0.9"
-        preserveAspectRatio="xMidYMid meet" />
+        preserveAspectRatio="xMidYMid meet"
+        style={{ pointerEvents: 'none' }} />
 
       {/* 외해자 — 클릭 대상 아님 */}
       <polygon id="outer-moat" data-type="moat"
