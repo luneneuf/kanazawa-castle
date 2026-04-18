@@ -1,14 +1,8 @@
 [
-  {
-    "id": "horeki-1759",
-    "label": { "ko": "호레키 대화재", "ja": "宝暦大火" },
-    "year": 1759,
-    "affected": ["tenshu-dai"],
-    "replay": [
-      { "step": 1, "type": "ignition", "node": "ninomaru-east" },
-      { "step": 2, "type": "wind", "direction": "W", "mvp_skip": true },
-      { "step": 3, "type": "spread", "nodes": ["honmaru", "tenshu-dai"] },
-      { "step": 4, "type": "damage_final" }
-    ]
-  }
+  { "id": "fire-1602", "year": 1602, "era": "1602", "descriptionKey": "events.fire-1602.description" },
+  { "id": "fire-1631", "year": 1631, "era": "1631", "descriptionKey": "events.fire-1631.description" },
+  { "id": "fire-1759", "year": 1759, "era": "1759", "descriptionKey": "events.fire-1759.description" },
+  { "id": "fire-1808", "year": 1808, "era": "1808", "descriptionKey": "events.fire-1808.description" },
+  { "id": "fire-1812", "year": 1812, "era": "1808", "descriptionKey": "events.fire-1812.description" },
+  { "id": "fire-1881", "year": 1881, "era": "1881", "descriptionKey": "events.fire-1881.description" }
 ]

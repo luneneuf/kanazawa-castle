@@ -2,6 +2,7 @@
   {
     "id": "outer-moat",
     "name": { "ko": "외해자", "ja": "外堀" },
+    "descriptionKey": "places.outer-moat.description",
     "cx": 0.626,
     "cy": 0.486,
     "eras": {
@@ -18,6 +19,7 @@
   {
     "id": "inner-moat",
     "name": { "ko": "내해자", "ja": "内堀" },
+    "descriptionKey": "places.inner-moat.description",
     "cx": 0.472,
     "cy": 0.766,
     "eras": {
@@ -34,6 +36,7 @@
   {
     "id": "honmaru",
     "name": { "ko": "혼마루", "ja": "本丸" },
+    "descriptionKey": "places.honmaru.description",
     "cx": 0.262,
     "cy": 0.458,
     "eras": {
@@ -50,6 +53,7 @@
   {
     "id": "tenshu-dai",
     "name": { "ko": "천수대", "ja": "天守台" },
+    "descriptionKey": "places.tenshu-dai.description",
     "cx": 0.092,
     "cy": 0.244,
     "eras": {
@@ -66,6 +70,7 @@
   {
     "id": "ninomaru",
     "name": { "ko": "니노마루", "ja": "二の丸" },
+    "descriptionKey": "places.ninomaru.description",
     "cx": 0.761,
     "cy": 0.591,
     "eras": {
@@ -82,6 +87,7 @@
   {
     "id": "sannomaru",
     "name": { "ko": "산노마루", "ja": "三の丸" },
+    "descriptionKey": "places.sannomaru.description",
     "cx": 0.499,
     "cy": 0.839,
     "eras": {
@@ -98,6 +104,7 @@
   {
     "id": "kahoku-turret",
     "name": { "ko": "가호쿠 망루", "ja": "河北門" },
+    "descriptionKey": "places.kahoku-turret.description",
     "cx": 0.223,
     "cy": 0.157,
     "eras": {
@@ -114,6 +121,7 @@
   {
     "id": "hishi-turret",
     "name": { "ko": "히시 망루", "ja": "菱櫓" },
+    "descriptionKey": "places.hishi-turret.description",
     "cx": 0.656,
     "cy": 0.645,
     "eras": {
@@ -130,6 +138,7 @@
   {
     "id": "gojikken-nagaya",
     "name": { "ko": "오십간 장옥", "ja": "五十間長屋" },
+    "descriptionKey": "places.gojikken-nagaya.description",
     "cx": 0.790,
     "cy": 0.642,
     "eras": {
