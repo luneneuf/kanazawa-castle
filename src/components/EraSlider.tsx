@@ -13,6 +13,13 @@ const STATE_STYLE: Record<EraState, { fill: string; opacity: number }> = {
   lost:     { fill: '#3a3530', opacity: 0.2 },
 };
 
+const LEGEND: { status: EraState; label: string }[] = [
+  { status: 'standing', label: '현존' },
+  { status: 'restored', label: '복원' },
+  { status: 'ruin',     label: '소실' },
+  { status: 'lost',     label: '흔적 없음' },
+];
+
 type KoPlaces = typeof ko.places;
 type PlaceId = keyof KoPlaces;
 
@@ -33,6 +40,9 @@ export default function EraSlider() {
   return (
     <div style={{ width: '100%', maxWidth: 720, margin: '0 auto', padding: '0 1rem' }}>
       <div style={{ margin: '1.5rem 0 0.5rem' }}>
+        <p style={{ textAlign: 'center', fontSize: '0.8rem', color: '#7a6a5a', margin: '0 0 0.5rem' }}>
+          시대를 선택하면 건물 상태가 바뀝니다. 건물을 클릭하면 해설을 볼 수 있습니다.
+        </p>
         <input
           type="range"
           min={0}
@@ -52,13 +62,31 @@ export default function EraSlider() {
         </div>
       </div>
 
-      <p style={{ textAlign: 'center', fontSize: '1rem', color: '#e8e0d4', marginBottom: '1rem' }}>
+      <p style={{ textAlign: 'center', fontSize: '1rem', color: '#e8e0d4', marginBottom: '0.5rem' }}>
         {currentEra.label?.ko ?? currentEra.year}
       </p>
 
+      <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', margin: '0.75rem 0', flexWrap: 'wrap' }}>
+        {LEGEND.map(({ status, label }) => (
+          <div key={status} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8rem', color: '#4a3f30' }}>
+            <div style={{
+              width: 14, height: 14, borderRadius: 3,
+              background: STATE_STYLE[status].fill,
+              opacity: STATE_STYLE[status].opacity,
+              border: '1px solid #9a8a7a',
+            }} />
+            {label}
+          </div>
+        ))}
+      </div>
+
       <CastleMap nodeStyles={nodeStyles} onNodeClick={id => setSelectedId(prev => prev === id ? null : id)} />
 
-      {placeInfo && (
+      {!placeInfo ? (
+        <div style={{ textAlign: 'center', color: '#9a8a7a', fontSize: '0.85rem', padding: '2rem 1rem' }}>
+          지도에서 건물을 클릭하세요
+        </div>
+      ) : (
         <div style={{
           marginTop: '1rem',
           padding: '1rem 1.25rem',

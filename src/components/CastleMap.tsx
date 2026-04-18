@@ -10,6 +10,9 @@ const LABELS = [
   { id: 'kahoku-turret', x: 222, y: 102, label: '河北門' },
 ];
 
+const hoverOn  = (e: React.MouseEvent<SVGElement>) => { e.currentTarget.style.strokeWidth = '3'; };
+const hoverOff = (e: React.MouseEvent<SVGElement>) => { e.currentTarget.style.strokeWidth = '1.5'; };
+
 export default function CastleMap({ nodeStyles = {}, onNodeClick }: Props) {
   const s = (id: string): NodeStyle => nodeStyles[id] ?? DEFAULT;
   const click = (id: string) => onNodeClick?.(id);
@@ -24,15 +27,14 @@ export default function CastleMap({ nodeStyles = {}, onNodeClick }: Props) {
         opacity="0.9"
         preserveAspectRatio="xMidYMid meet" />
 
-      {/* 외해자 */}
+      {/* 외해자 — 클릭 대상 아님 */}
       <polygon id="outer-moat" data-type="moat"
         points="65,64 905,74 905,426 829,426 829,613 225,730"
         fill="none"
         stroke={s('outer-moat').fill}
         strokeWidth="3"
         opacity={s('outer-moat').opacity}
-        style={{ cursor: 'pointer' }}
-        onClick={() => click('outer-moat')} />
+        style={{ cursor: 'default' }} />
 
       {/* 혼마루 */}
       <polygon id="honmaru" data-type="zone"
@@ -41,6 +43,7 @@ export default function CastleMap({ nodeStyles = {}, onNodeClick }: Props) {
         opacity={s('honmaru').opacity}
         stroke="#0f0f0f" strokeWidth="1.5"
         style={{ cursor: 'pointer' }}
+        onMouseEnter={hoverOn} onMouseLeave={hoverOff}
         onClick={() => click('honmaru')} />
 
       {/* 니노마루 */}
@@ -50,6 +53,7 @@ export default function CastleMap({ nodeStyles = {}, onNodeClick }: Props) {
         opacity={s('ninomaru').opacity}
         stroke="#0f0f0f" strokeWidth="1.5"
         style={{ cursor: 'pointer' }}
+        onMouseEnter={hoverOn} onMouseLeave={hoverOff}
         onClick={() => click('ninomaru')} />
 
       {/* 산노마루 */}
@@ -59,16 +63,16 @@ export default function CastleMap({ nodeStyles = {}, onNodeClick }: Props) {
         opacity={s('sannomaru').opacity}
         stroke="#0f0f0f" strokeWidth="1.5"
         style={{ cursor: 'pointer' }}
+        onMouseEnter={hoverOn} onMouseLeave={hoverOff}
         onClick={() => click('sannomaru')} />
 
-      {/* 내해자 */}
+      {/* 내해자 — 클릭 대상 아님 */}
       <line id="inner-moat"
         x1="115" y1="613" x2="829" y2="613"
         stroke={s('inner-moat').fill}
         strokeWidth="8"
         opacity={s('inner-moat').opacity}
-        style={{ cursor: 'pointer' }}
-        onClick={() => click('inner-moat')} />
+        style={{ cursor: 'default' }} />
 
       {/* 천수대 */}
       <rect id="tenshu-dai" data-type="building"
@@ -77,6 +81,7 @@ export default function CastleMap({ nodeStyles = {}, onNodeClick }: Props) {
         opacity={s('tenshu-dai').opacity}
         stroke="#c4a882" strokeWidth="1.5"
         style={{ cursor: 'pointer' }}
+        onMouseEnter={hoverOn} onMouseLeave={hoverOff}
         onClick={() => click('tenshu-dai')} />
 
       {/* 河北門 */}
@@ -86,6 +91,7 @@ export default function CastleMap({ nodeStyles = {}, onNodeClick }: Props) {
         opacity={s('kahoku-turret').opacity}
         stroke="#8fbcbb" strokeWidth="1.5"
         style={{ cursor: 'pointer' }}
+        onMouseEnter={hoverOn} onMouseLeave={hoverOff}
         onClick={() => click('kahoku-turret')} />
 
       {/* 히시 망루 */}
@@ -95,6 +101,7 @@ export default function CastleMap({ nodeStyles = {}, onNodeClick }: Props) {
         opacity={s('hishi-turret').opacity}
         stroke="#8fbcbb" strokeWidth="1.5"
         style={{ cursor: 'pointer' }}
+        onMouseEnter={hoverOn} onMouseLeave={hoverOff}
         onClick={() => click('hishi-turret')} />
 
       {/* 오십간 장옥 */}
@@ -104,6 +111,7 @@ export default function CastleMap({ nodeStyles = {}, onNodeClick }: Props) {
         opacity={s('gojikken-nagaya').opacity}
         stroke="#8fbcbb" strokeWidth="1.5"
         style={{ cursor: 'pointer' }}
+        onMouseEnter={hoverOn} onMouseLeave={hoverOff}
         onClick={() => click('gojikken-nagaya')} />
 
       {/* 레이블 */}
